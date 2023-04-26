@@ -28,7 +28,7 @@ class DebtorsController extends Controller
      */
     public function store(Request $request)
     {
-        $store = Debtors::created($request->input());
+        $store = debtors::created($request->input());
         if($store)
         {   
 

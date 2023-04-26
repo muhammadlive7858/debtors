@@ -26,7 +26,8 @@ Route::post('/login', [AuthController::class,'login']);
 Route::post('/logout', [AuthController::class,'logout']);
 
 Route::apiResources([
-        "debt"=>DebtorsController::class,
+        "debtor"=>DebtorsController::class,
+        "debt"=>DebtsController::class 
     ]);
 
 

@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('debtors', function (Blueprint $table) {
+        Schema::create('debts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('user_id');
-            $table->string('debter_name');
-            $table->string('desc');
-            $table->string('phone');
+
+            $table->foregnId('user_id');
+            $table->foregnId('debtor_id');
+            $table->bigInteger('debt');
+            $table->string('description')->nullable();
+
+            $table->date("backtime")->nullable();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('debtors');
+        Schema::dropIfExists('debts');
     }
 };
