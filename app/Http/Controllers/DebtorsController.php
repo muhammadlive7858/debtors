@@ -7,33 +7,24 @@ use Illuminate\Http\Request;
 
 class DebtorsController extends Controller
 {
+
+    protected function __construct()
+    {
+        $this->middleware('auth:santum');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return response()->json([
+            'msg'=> true,
+            'data'=> debtors::where('user_id' , auth()->user()->id)
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $store = debtors::created($request->input());
-        if($store)
-        {   
-
-            return response()->json("Debtor create");
-        }
     }
 
     /**
