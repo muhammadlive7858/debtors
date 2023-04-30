@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DebtorsController;
 
 use App\Http\Controllers\DebtorsController;
 use App\Http\Controllers\DebtsController;
@@ -31,7 +32,10 @@ Route::post('/logout', [AuthController::class,'logout']);
 
 Route::apiResources([
         "debtor"=>DebtorsController::class,
+<<<<<<< HEAD
         "debt"=>DebtsController::class 
+=======
+>>>>>>> 1c4add2164afcd03dfe09da1665120ac59f8ba9f
     ]);
 
 

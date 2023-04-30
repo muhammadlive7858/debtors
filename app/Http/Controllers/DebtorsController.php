@@ -17,13 +17,22 @@ class DebtorsController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+<<<<<<< HEAD
     {   
         $debtors = debtors::where('user_id' , Auth::user()->id);
         return api_response($debtors,"All debtors",200);
+=======
+    {
+        return response()->json([
+            'msg'=> true,
+            'data'=> debtors::where('user_id' , auth()->user()->id)
+        ]);
+>>>>>>> 1c4add2164afcd03dfe09da1665120ac59f8ba9f
     }
 
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $array = [
             'debtor_name' =>$request->name,
             'phone'=>$request->phone,
@@ -32,6 +41,9 @@ class DebtorsController extends Controller
         ];
         $store = debtors::create($array);
         return api_response($store,"Debtor create succesfully",200);
+=======
+        
+>>>>>>> 1c4add2164afcd03dfe09da1665120ac59f8ba9f
     }
 
     /**
