@@ -1,10 +1,10 @@
 <?php
 
 if (!function_exists('api_response')) {
-    function api_response($data, $msg ,  $status )
+    function api_response($data,$message,$status)
     {
         return response()->json([
-            'msg'=> $msg,
+            'message'=> $message,
             'data'=>$data,
 
         ],$status);

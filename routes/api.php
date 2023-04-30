@@ -4,6 +4,10 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DebtorsController;
+use App\Http\Controllers\DebtsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

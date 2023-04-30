@@ -11,21 +11,17 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function login(Request $request){
-        // dd($request->device_name)
-
         $request->validate([
-            'email' => 'required|email|unique',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
         $user = User::where('email', $request->email)->first();
 
-        if (! $user || ! Hash::check($request->password, $user->password)) {
+        if (!$user||!Hash::check($request->password,$user->password)) {
             return response()->json(['message' => 'Wrong password or email']);
         }
-        // test
         return $user->createToken($user->name)->plainTextToken;
-        // validate
     }
 
     public function register(Request $request){
